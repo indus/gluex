@@ -81,7 +81,7 @@ When calling gluex with the namespace `dev` the first directive will be replaced
 
 For JSON and HTML includes you can put a selectors behind the filename (in brackets). For a JSON file the selector has to be a property path. For a HTML file you can use any CSS selector. 
 
-
+## License
 **MIT License**
 
 Copyright (c) 2017 Stefan Keim (indus)
