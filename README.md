@@ -18,13 +18,18 @@
 GLUEX uses inline comment-based directives to determine which files you'd like to fuse.  `@gluex` has to be used as the directive.
 
 ### In a JavaScript file
-    // @gluex path/to/file.js
+``` JS
+// @gluex path/to/file.js
+```
 or 
-
-    /* @gluex path/to/file.js */
+``` JS
+/* @gluex path/to/file.js */
+```
 
 ### In a HTML file
-    <!-- @gluex path/to/file.html -->
+``` HTML
+<!-- @gluex path/to/file.html -->
+```
 
 ### as a CLI tool
 
@@ -40,44 +45,51 @@ When watching, GLUEX will automatically watch any referenced files for changes t
 
 ### as a module
 
-    var gluex = require("gluex");
-    var inputPath = "path/to/input.xx";
-    var outputPath = "path/to/output.xx";
-    var namespace = null;
-    var watch = true;
+``` JS 
+var gluex = require("gluex"),
 
+inputPath = "path/to/input.xx",
+outputPath = "path/to/output.xx",
+namespace = null,
+watch = true,
+
+gluex(inputPath, outputPath, namespace, watch);
+```
     
-    gluex(inputPath, outputPath, namespace, watch);
 if you omit the `outputPath` the glued file gets returned by the function like so...
-
-    var output = gluex(inputPath);
+``` JS 
+var output = gluex(inputPath);
+```
 
 ## Advanced Usage
 ### Namespaces
 
+``` HTML
+<body>
+<!-- gluex path/to/dev_only.html -->
+<!-- gluex:dev path/to/dev_only.html -->
+</body>
+```
 
-    <body>
-    <!-- gluex path/to/dev_only.html -->
-    <!-- gluex:dev path/to/dev_only.html -->
-    </body>
-
-When calling gluex with the namespace `dev` the first directive will be replaced with an empty string (deleted) and only the second one will be replaced with the content of the refernced file. Calling with no namespace will replace the first one and remove the second one. You can pass a namespace like so:
+When calling gluex with the namespace `dev` the first directive will be replaced with an empty string (deleted) and only the second one will be replaced with the content of the refernced file. Calling with no namespace will replace the first one and remove the second one. This works the same for JS. You can pass a namespace like so:
 
 #### CLI
     gluex -i path/to/input.xx -o path/to/output.xx -n dev
 
 #### Module
-    gluex(path/to/input.xx, path/to/output.xx, 'dev');
-
+``` JS
+gluex('path/to/input.xx', 'path/to/output.xx', 'dev');
+```
 
 ### Selectors
-
-    <head>
-        <title><!-- gluex path/to/package.json (.name) --></title>
-    </head>
-    <body>
-    <!-- gluex path/to/partials.html (#someID) -->
-    </body>
+``` HTML
+<head>
+    <title><!-- gluex path/to/package.json (.name) --></title>
+</head>
+<body>
+<!-- gluex path/to/partials.html (#someID) -->
+</body>
+```
 
 For JSON and HTML includes you can put a selectors behind the filename (in brackets). For a JSON file the selector has to be a property path. For a HTML file you can use any CSS selector. 
 
