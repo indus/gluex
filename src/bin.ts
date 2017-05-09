@@ -4,7 +4,7 @@
 var gluex = require('../index');
 
 var argv = require('yargs')
-    .usage('Usage: $0 -i [input.file] -o [output.file]')
+    .usage('Usage: gluex -i [input.file] -o [output.file]')
     .alias('i', 'input')
     .nargs('i', 1)
     .alias('o', 'output')
@@ -19,7 +19,7 @@ var argv = require('yargs')
     .boolean('q')
     .alias('q', 'quite')
     .describe('q', 'disable console output')
-    .epilog('copyright 2017')
+    .epilog('MIT License; Copyright (c) 2017 Stefan Keim (indus)')
     .argv;
 
 !argv.q && console.time("GLUEX");
