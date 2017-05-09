@@ -1,3 +1,4 @@
+#! /usr/bin/env node
 'use strict';
 var gluex = require('../index');
 var argv = require('yargs')
