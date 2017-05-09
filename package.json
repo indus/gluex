@@ -1,6 +1,6 @@
 {
   "name": "gluex",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "a tool to glue all of your stuff together",
   "engines": {
     "node": ">=4.2.0"
