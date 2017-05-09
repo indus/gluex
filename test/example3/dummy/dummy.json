@@ -1,0 +1,7 @@
+{
+    "title": "DummyTitle",
+    "config": {
+        "value": true,
+        "string": "dummystring"
+    }
+}

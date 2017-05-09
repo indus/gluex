@@ -1,0 +1,47 @@
+{
+  "name": "gluex",
+  "version": "0.0.1",
+  "description": "a tool to glue all of your stuff together",
+  "engines": {
+    "node": ">=4.2.0"
+  },
+  "main": "./lib/gluex.js",
+  "scripts": {
+    "test": "mocha --reporter spec",
+    "dev": "run-p dev:*",
+    "dev:tsc_bin": "tsc -w --outfile ./bin/gluex.js src/bin.ts",
+    "dev:tsc_lib": "tsc -w --outfile index.js src/index.ts",
+    "dev:tsc_test": "tsc -w --outfile ./test/test.js src/test.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^7.0.18",
+    "chai": "^3.5.0",
+    "mocha": "^3.3.0",
+    "npm-run-all": "^4.0.2"
+  },
+  "bin": {
+    "gluex": "./bin/gluex.js"
+  },
+  "preferGlobal": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/indus/gluex.git"
+  },
+  "keywords": [
+    "cli",
+    "combiner",
+    "packager",
+    "fuse"
+  ],
+  "author": "indus (Stefan Keim)",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/indus/gluex/issues"
+  },
+  "homepage": "https://github.com/indus/gluex#readme",
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "fs-extra": "^3.0.1",
+    "yargs": "^8.0.1"
+  }
+}
