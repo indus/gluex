@@ -74,7 +74,7 @@ var output = gluex(inputPath);
 </body>
 ```
 
-When calling gluex with the namespace `dev` the first directive will be replaced with an empty string (deleted) and only the second one will be replaced with the content of the refernced file. Calling with no namespace will replace the first one and remove the second one. This works the same for JS. You can pass a namespace like so:
+When calling gluex with the namespace `dev` the first directive will be replaced with an empty string (deleted) and only the second one will be replaced with the content of the refernced file. Calling with no namespace will replace both comments and remove none. This works the same for JS. You can pass a namespace like so:
 
 #### CLI
     gluex -i path/to/input.xx -o path/to/output.xx -n dev
