@@ -4,18 +4,21 @@
 > GLUEX is a tool to glue multiple HTML, JavaScript or JSON files (or other file types) together. It lets you use selectors to only pick a certain tag from a HTML document or a certain property from a JSON. Furthermore it allows the usage of namespaces, for example to distinguish between a development and a productive scenario. It could be used as a CLI tool as well as a module in your code.
 
 ## Installation
-### as a command line tool
-	npm install gluex -g
+as a command line tool
 
-### as a module
-	npm install gluex --save
+```
+npm install gluex -g
+```
 
-## Running tests
-    npm test
+as a module
+
+```
+npm install gluex --save
+```
 
 ## Usage
 
-GLUEX uses inline comment-based directives to determine which files you'd like to fuse.  `@gluex` has to be used as the directive.
+GLUEX uses inline comment-based directives to determine which files you'd like to glue.
 
 ### In a JavaScript file
 ``` JS
@@ -31,7 +34,7 @@ or
 <!-- @gluex path/to/file.html -->
 ```
 
-### as a CLI tool
+### invoke as a CLI tool
 
 to glue just once:
 
@@ -43,7 +46,7 @@ to watch files for changes:
 
 When watching, GLUEX will automatically watch any referenced files for changes too, and recompile the output file upon any changes to reference files.
 
-### as a module
+### invoke as a module
 
 ``` JS 
 var gluex = require("gluex"),
