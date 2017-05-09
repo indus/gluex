@@ -23,7 +23,10 @@ module.exports = function (input: string, output: string | null, namespace?: str
         if (watch && !watchers[inp]) {
             watchers[inp] = fs.watch(inp, null, (ev) => {
                 for (var i in watchers)
-                    i != input && watchers[i].close();
+                    if(i != input) {
+                        watchers[i].close();
+                        delete watchers[i];
+                }
                 if ((+Date.now() - now) > 50) {
                     now = +Date.now();
                     !quite && console.time("GLUEX reload")
