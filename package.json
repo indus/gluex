@@ -33,8 +33,8 @@
     "packager",
     "fuse"
   ],
-  "author": "indus (Stefan Keim)",
-  "license": "UNLICENSED",
+  "author": "Stefan Keim (indus)",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/indus/gluex/issues"
   },
