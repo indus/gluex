@@ -22,9 +22,8 @@ module.exports = function (input, output, namespace, watch, quite) {
                     }
                 if ((+Date.now() - now) > 50) {
                     now = +Date.now();
-                    !quite && console.time("GLUEX reload");
-                    gluex(input);
-                    !quite && console.timeEnd("GLUEX reload");
+                    setTimeout(gluex, 0, input);
+                    !quite && console.log("GLUEX reload");
                 }
             });
         }
