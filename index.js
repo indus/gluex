@@ -34,6 +34,7 @@ module.exports = function (input, output, namespace, watch, quite) {
                     f = JSON.stringify(eval("(" + f + ")" + selector)).replace(/^"|"$/gi, '');
                     break;
                 case "HTML":
+                case "SVG":
                     f = $.load(f).html(selector);
                     break;
                 default: !quite && console.warn("GLUEX the use of selectors is only supported for HTML and JSON files but not for \"." + ext + "\"");

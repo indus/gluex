@@ -39,7 +39,8 @@ module.exports = function (input: string, output: string | null, namespace?: str
             var ext = path.extname(inp).substring(1)
             switch (ext.toUpperCase()) {
                 case "JSON": f = JSON.stringify(eval(`(${f})${selector}`)).replace(/^"|"$/gi, ''); break;
-                case "HTML": f = $.load(f).html(selector); break;
+                case "HTML":
+                case "SVG": f = $.load(f).html(selector); break;
                 default: !quite && console.warn(`GLUEX the use of selectors is only supported for HTML and JSON files but not for ".${ext}"`)
             }
         }
