@@ -70,18 +70,18 @@ var output = gluex(inputPath);
 ``` HTML
 <body>
 <!-- gluex path/to/dev_only.html -->
-<!-- gluex:dev path/to/dev_only.html -->
+<!-- gluex:production path/to/prod.html -->
 </body>
 ```
 
-When calling gluex with the namespace `dev` the first directive will be replaced with an empty string (deleted) and only the second one will be replaced with the content of the refernced file. Calling with no namespace will replace both comments and remove none. This works the same for JS. You can pass a namespace like so:
+When calling gluex with the namespace `production` the first directive will be replaced with an empty string (deleted) and only the second one will be replaced with the content of the refernced file. Calling with no namespace will replace both comments and remove none. This works the same for JS. You can pass a namespace like so:
 
 #### CLI
-    gluex -i path/to/input.xx -o path/to/output.xx -n dev
+    gluex -i path/to/input.xx -o path/to/output.xx -n production
 
 #### Module
 ``` JS
-gluex('path/to/input.xx', 'path/to/output.xx', 'dev');
+gluex('path/to/input.xx', 'path/to/output.xx', 'production');
 ```
 
 ### Selectors
